@@ -45,3 +45,19 @@
   border-radius: 10px;
   background: white;
 }
+
+
+.suggestion-chip {
+  margin: 5px
+}
+
+
+.suggestion-root {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}

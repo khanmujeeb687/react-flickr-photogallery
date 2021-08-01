@@ -57,8 +57,9 @@ const Collage = () => {
     };
 
     useEffect(()=>{
+        window.scrollTo(0,0);
         if(query && !searchData){
-           searchImages();
+            searchImages();
         }
     },[query]);
 

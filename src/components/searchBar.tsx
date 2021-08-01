@@ -9,6 +9,12 @@ const SearchBar = () => {
 
 
     return (<TextField
+        onFocus={()=>{
+            dispatch(Actions.updateShowSuggestions(true));
+        }}
+        onBlur={()=>{
+            dispatch(Actions.updateShowSuggestions(false));
+        }}
         className='search-bar'
         onChange={({target: {value}}) => {
                 dispatch(Actions.updateSearchQuery(value));

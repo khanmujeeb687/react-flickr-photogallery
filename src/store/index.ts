@@ -9,14 +9,16 @@ export interface IState {
     searchData:{
         [key:string]:{photos:IPhoto[],page:number}
     },
-    searchQuery:string
+    searchQuery:string,
+    showSuggestions:boolean
 }
 
 const INITIAL_STATE : IState = {
     recentPhotos:[],
     searchHistory: getLocalSearchHistory(),
     searchData:{},
-    searchQuery:''
+    searchQuery:'',
+    showSuggestions:false
 }
 
 
@@ -26,6 +28,11 @@ function counterReducer(state:IState = INITIAL_STATE, action:any) {
             return {
                 ...state,
                 recentPhotos: action.payload
+            };
+        case Actions.UPDATE_SHOW_SUGGESTION:
+            return {
+                ...state,
+                showSuggestions: action.payload
             };
         case Actions.UPDATE_SEARCH_HISTORY:
             return {
