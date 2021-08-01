@@ -1,32 +1,42 @@
-import React from 'react';
-import axios from 'axios';
+import React, {useEffect, useState} from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 import GridItem from "./gridItem";
 import './home/homeScreen.scss';
+import {getImageUrl, getRecentPhotos} from "../services/photoService";
+import {useDispatch, useSelector} from "react-redux";
+import {Actions} from "../store/actions";
+import {IState} from "../store";
 
 
 const Collage = () => {
-    const [images, setImages] = React.useState<{urls:{regular:string}}[]>([]);
+    const photos = useSelector((state:IState)=>state.recentPhotos);
     const [loaded, setIsLoaded] = React.useState(false);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
+    const dispatch = useDispatch();
 
-    React.useEffect(() => {
+
+
+    useEffect(() => {
         fetchImages();
     }, []);
 
-    const fetchImages = (count = 10) => {
-        const apiRoot = "https://api.unsplash.com";
-        const accessKey =
-            "a22f61e98da4efa25d8860e77a91a596867dd335ecdf7feb12e086943db9565a";
 
-        axios.get(`${apiRoot}/photos/random?client_id=${accessKey}&count=${count}`)
-            .then(res => {
-                // @ts-ignore
-                setImages([...images, ...res.data]);
-                setIsLoaded(true);
 
-                console.log(images);
-            });
+    const fetchImages = async() => {
+        if(!hasMore) return;
+        const data = await  getRecentPhotos(page);
+        if(data.length){
+           dispatch(Actions.updatePhotos([...photos,...data]));
+           setPage(page+1);
+        }else{
+           setHasMore(false);
+        }
+        setIsLoaded(true);
     };
+
+
+
 
     return (
         <div className="hero is-fullheight is-bold is-info">
@@ -40,9 +50,9 @@ const Collage = () => {
                     </div>
 
                     <InfiniteScroll
-                        dataLength={images.length}
-                        next={() => fetchImages(5)}
-                        hasMore={true}
+                        dataLength={photos.length}
+                        next={() => fetchImages()}
+                        hasMore={hasMore}
                         loader={
                             <img
                                 src="https://res.cloudinary.com/chuloo/image/upload/v1550093026/scotch-logo-gif_jq4tgr.gif"
@@ -52,10 +62,10 @@ const Collage = () => {
                     >
                         <div className="image-grid" style={{ marginTop: "30px" }}>
                             {loaded
-                                ? images.map((image, index) => (
+                                ? photos.map((photo, index) => (
                                     <GridItem
-                                        url={image.urls.regular}
-                                        key={index.toString()}
+                                        url={getImageUrl(photo)}
+                                        key={photo.id.toString()}
                                     />
                                 ))
                                 : ""}

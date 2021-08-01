@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 import {Actions} from "./actions";
 import {IPhoto} from "../models/photo";
 
-interface IState {
+export interface IState {
     recentPhotos:IPhoto[],
 }
 
