@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27bee8b7-7750-42f9-ab75-fb273831ff69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/suggestionsBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/loader.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/collage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/home/homeScreen.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/homeScreen.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/home/homeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/homeScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/searchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/searchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/suggestionsBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/suggestionsBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/photoService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/photoService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,7 +46,12 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -81,6 +87,17 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="320" y="87" key="#File_Watchers" timestamp="1627703357121">
       <screen x="0" y="25" width="1440" height="800" />
@@ -90,6 +107,10 @@
       <screen x="0" y="25" width="1440" height="800" />
     </state>
     <state x="436" y="232" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.800@0.25.1440.800" timestamp="1627793676190" />
+    <state x="100" y="125" width="1240" height="600" key="DiffContextDialog" timestamp="1627816971482">
+      <screen x="0" y="25" width="1440" height="800" />
+    </state>
+    <state x="100" y="125" width="1240" height="600" key="DiffContextDialog/0.25.1440.800@0.25.1440.800" timestamp="1627816971482" />
     <state x="305" y="207" key="EditFileWatcherDialog" timestamp="1627703338973">
       <screen x="0" y="25" width="1440" height="800" />
     </state>

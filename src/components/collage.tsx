@@ -6,9 +6,11 @@ import {getImageUrl, getRecentPhotos, searchPhotos} from "../services/photoServi
 import {useDispatch, useSelector} from "react-redux";
 import {Actions} from "../store/actions";
 import {IState} from "../store";
+import Loader from "./loader";
 
 
 const Collage = () => {
+    const showSuggestions = useSelector((state:IState)=>state.showSuggestions);
     const photos = useSelector((state:IState)=>state.recentPhotos);
     const query = useSelector((state:IState)=>state.searchQuery);
     const searchData = useSelector((state:IState)=>state.searchData[query]);
@@ -83,14 +85,9 @@ const Collage = () => {
                         dataLength={(query?searchResults:photos).length}
                         next={loadMore}
                         hasMore={hasMore}
-                        loader={
-                            <img
-                                src="https://res.cloudinary.com/chuloo/image/upload/v1550093026/scotch-logo-gif_jq4tgr.gif"
-                                alt="loading"
-                            />
-                        }
+                        loader={<Loader/>}
                     >
-                        <div key={query} className="image-grid" style={{ marginTop: "30px" }}>
+                        <div key={query} className="image-grid" style={{ marginTop: showSuggestions?'50px':"30px" }}>
                             {loaded
                                 ? (query?searchResults:photos).map((photo, index) =>{
                                     if(query && photo.query && photo.query!==query) return null;

@@ -48,16 +48,16 @@
 
 
 .suggestion-chip {
-  margin: 5px
+  margin-right: 5px
 }
 
 
 .suggestion-root {
+  margin-top: 20px;
   background-color: black;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   list-style: none;
   padding: 5px;
-  margin: 0;
 }

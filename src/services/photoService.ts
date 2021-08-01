@@ -30,11 +30,16 @@ function getLocalSearchHistory():string[] {
 }
 
 function setLocalSearchHistory(item:string) {
+    if(getLocalSearchHistory().includes(item) || !item.trim()) return;
     return localStorage.setItem('search_history',JSON.stringify({data:[...getLocalSearchHistory(),item]}));
 }
 
-function clearLocalSearch() {
-    return localStorage.removeItem('search_history');
+function removeFromLocalHistory(item:string) {
+    let data = getLocalSearchHistory();
+    if(data.length){
+        data = data.filter(item1=>item1!==item);
+        return localStorage.setItem('search_history',JSON.stringify({data}));
+    }
 }
 
 
@@ -44,5 +49,5 @@ export {
     searchPhotos,
     setLocalSearchHistory,
     getLocalSearchHistory,
-    clearLocalSearch
+    removeFromLocalHistory
 }
