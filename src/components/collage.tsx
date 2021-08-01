@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Actions} from "../store/actions";
 import {IState} from "../store";
 import Loader from "./loader";
+import ImageModal from "./imageModal";
 
 
 const Collage = () => {
@@ -21,6 +22,7 @@ const Collage = () => {
     const [page, setPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);
     const dispatch = useDispatch();
+    const [selectedImage,setSelectedImage] = useState('');
 
 
 
@@ -81,6 +83,7 @@ const Collage = () => {
         <div className="hero is-fullheight is-bold is-info">
             <div className="hero-body">
                 <div className="container">
+                    <ImageModal url={selectedImage} onClose={()=>setSelectedImage('')}/>
                     <InfiniteScroll
                         dataLength={(query?searchResults:photos).length}
                         next={loadMore}
@@ -92,10 +95,14 @@ const Collage = () => {
                                 ? (query?searchResults:photos).map((photo, index) =>{
                                     if(query && photo.query && photo.query!==query) return null;
                                     return(
+                                        <div onClick={()=>{
+                                            setSelectedImage(getImageUrl(photo))
+                                        }}>
                                     <GridItem
                                         url={getImageUrl(photo)}
                                         key={photo.id.toString()}
                                     />
+                                        </div>
                                 );})
                                 : ""}
                         </div>

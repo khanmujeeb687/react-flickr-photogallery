@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27bee8b7-7750-42f9-ab75-fb273831ff69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/imageModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/homeScreen.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/homeScreen.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/suggestionsBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/suggestionsBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +27,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -90,6 +93,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="320" y="87" key="#ESLint" timestamp="1627818117713">
+      <screen x="0" y="25" width="1440" height="800" />
+    </state>
+    <state x="320" y="87" key="#ESLint/0.25.1440.800@0.25.1440.800" timestamp="1627818117713" />
     <state x="320" y="87" key="#File_Watchers" timestamp="1627703357121">
       <screen x="0" y="25" width="1440" height="800" />
     </state>
@@ -114,9 +121,9 @@
       <screen x="0" y="25" width="1440" height="800" />
     </state>
     <state x="384" y="182" width="671" height="486" key="find.popup/0.25.1440.800@0.25.1440.800" timestamp="1627703871345" />
-    <state x="385" y="149" width="670" height="676" key="search.everywhere.popup" timestamp="1627817227178">
+    <state x="385" y="149" width="670" height="676" key="search.everywhere.popup" timestamp="1627818303471">
       <screen x="0" y="25" width="1440" height="800" />
     </state>
-    <state x="385" y="149" width="670" height="676" key="search.everywhere.popup/0.25.1440.800@0.25.1440.800" timestamp="1627817227178" />
+    <state x="385" y="149" width="670" height="676" key="search.everywhere.popup/0.25.1440.800@0.25.1440.800" timestamp="1627818303471" />
   </component>
 </project>
