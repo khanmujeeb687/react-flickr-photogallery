@@ -58,7 +58,7 @@ const Collage = () => {
 
     useEffect(()=>{
         if(query && !searchData){
-         searchImages();
+           searchImages();
         }
     },[query]);
 
@@ -89,7 +89,7 @@ const Collage = () => {
                             />
                         }
                     >
-                        <div className="image-grid" style={{ marginTop: "30px" }}>
+                        <div key={query} className="image-grid" style={{ marginTop: "30px" }}>
                             {loaded
                                 ? (query?searchResults:photos).map((photo, index) =>{
                                     if(query && photo.query && photo.query!==query) return null;
