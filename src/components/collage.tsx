@@ -8,6 +8,7 @@ import {Actions} from "../store/actions";
 import {IState} from "../store";
 import Loader from "./loader";
 import ImageModal from "./imageModal";
+import {Typography} from "@material-ui/core";
 
 
 const Collage = () => {
@@ -80,8 +81,6 @@ const Collage = () => {
     console.log({searchResults});
 
     return (
-        <div className="hero is-fullheight is-bold is-info">
-            <div className="hero-body">
                 <div className="container">
                     <ImageModal url={selectedImage} onClose={()=>setSelectedImage('')}/>
                     <InfiniteScroll
@@ -90,6 +89,7 @@ const Collage = () => {
                         hasMore={hasMore}
                         loader={<Loader/>}
                     >
+                        <Typography style={{alignSelf:'flex-start'}} variant='h5'>{query && `${searchResults.length} results found for \'${query}\'`}</Typography>
                         <div key={query} className="image-grid" style={{ marginTop: showSuggestions?'50px':"30px" }}>
                             {loaded
                                 ? (query?searchResults:photos).map((photo, index) =>{
@@ -108,8 +108,6 @@ const Collage = () => {
                         </div>
                     </InfiniteScroll>
                 </div>
-            </div>
-        </div>
     );
 };
 
