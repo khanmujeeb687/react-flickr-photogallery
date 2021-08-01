@@ -53,10 +53,14 @@
 
 .suggestion-root {
   margin-top: 20px;
-  background-color: black;
+  background-color: black !important;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   list-style: none;
   padding: 5px;
+}
+
+.collapse-bar {
+  background-color: black !important;
 }

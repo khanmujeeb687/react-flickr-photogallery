@@ -20,9 +20,9 @@ const SuggestionsBar = () => {
     },[checked]);
 
 
-    return ( <Collapse style={{marginTop:10,background:'#000000'}} in={checked}  timeout={500}>
+    return ( <Collapse className='collapse-bar' in={checked}  timeout={500}>
 
-        <Paper style={{background:'#000000'}} component="ul" className='suggestion-root'>
+        <Paper component="ul" className='suggestion-root'>
             {suggestions.map((data) => {
                 return (
                     <li className='suggestion-chip' key={data}>
