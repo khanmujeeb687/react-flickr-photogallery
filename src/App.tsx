@@ -25,8 +25,8 @@ const App = () => {
                 <Toolbar style={{alignSelf: 'center'}}>
                     <div style={{padding: 20}}>
                         <Typography variant="h6">Search Photos</Typography>
-                        <div className='search-bar-container'><SearchBar/></div>
-                        <SuggestionsBar/>
+                        <SearchBar/>
+                       <SuggestionsBar/>
                     </div>
                 </Toolbar>
             </AppBar>

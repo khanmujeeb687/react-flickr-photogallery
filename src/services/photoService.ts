@@ -24,9 +24,10 @@ function getImageUrl(photo:IPhoto){
 }
 
 function getLocalSearchHistory():string[] {
-    const data = localStorage.getItem('search_history');
+    let data = localStorage.getItem('search_history');
     if(!data) return [];
-    return JSON.parse(data).data;
+    const data1:string[] = JSON.parse(data).data.reverse();
+    return data1.length>10?data1.slice(0,9):data1;
 }
 
 function setLocalSearchHistory(item:string) {

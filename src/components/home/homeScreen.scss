@@ -28,7 +28,7 @@
 
 
 @media (max-width: 600px) {
-  .search-bar-container {
+  .search-bar {
     width: 300px !important;
   }
   .image-grid {
@@ -36,9 +36,7 @@
     margin-left: 10px !important ;
   }
 }
-.search-bar-container {
-  height: 44px !important;
-}
+
 
 .search-bar {
   width: 500px;
@@ -48,7 +46,8 @@
 
 
 .suggestion-chip {
-  margin-right: 5px
+  margin-right: 5px;
+  margin-top: 2px;
 }
 
 
