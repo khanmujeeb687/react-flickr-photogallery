@@ -7,6 +7,8 @@
 }
 
 .image-grid {
+  margin-right: 100px ;
+  margin-left: 100px ;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -22,4 +24,19 @@
     height: 100%;
     object-fit: cover;
   }
+}
+
+
+@media (max-width: 600px) {
+  .search-bar-container {
+    width: 300px !important;
+  }
+  .image-grid {
+    margin-right: 10px !important ;
+    margin-left: 10px !important ;
+  }
+}
+
+.search-bar-container {
+  width: 400px;
 }

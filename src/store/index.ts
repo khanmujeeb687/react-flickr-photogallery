@@ -1,23 +1,22 @@
 import { createStore } from 'redux'
 import {Actions} from "./actions";
+import {IPhoto} from "../models/photo";
 
 interface IState {
-    name:string,
-    age:number
+    recentPhotos:IPhoto[],
 }
 
 const INITIAL_STATE : IState = {
-    name:'Mujeeb khan',
-    age:20,
+    recentPhotos:[]
 }
 
 
 function counterReducer(state:IState = INITIAL_STATE, action:any) {
     switch (action.type) {
-        case Actions.CHANGE_NAME:
+        case Actions.UPDATE_RECENT_PHOTOS:
             return {
                 ...state,
-                name: action.payload
+                recentPhotos: action.payload
             };
         default:
             return state

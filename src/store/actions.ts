@@ -1,12 +1,14 @@
+import {IPhoto} from "../models/photo";
+
 export class Actions{
-    static CHANGE_NAME = 'CHANGE_NAME';
+    static UPDATE_RECENT_PHOTOS = 'UPDATE_RECENT_PHOTOS';
 
 
 
-    static changeName(value:string){
+    static updatePhotos(value:IPhoto[]){
         return {
-            type: Actions.CHANGE_NAME,
-            value
+            type: Actions.UPDATE_RECENT_PHOTOS,
+            payload: value
         }
     }
 }
