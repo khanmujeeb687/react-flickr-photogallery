@@ -5,7 +5,15 @@ import {IPhoto} from "../models/photo";
 
 
 async function getRecentPhotos(page:number=1,perPage:number=10) {
-    const url = Constants.BASE_URL+'flickr.photos.getRecent&api_key=2bfe12cdffacbd9662ecbc62f53a35ce&per_page='+perPage+'&format=json&nojsoncallback=1&page='+page;
+    const url = Constants.BASE_URL+'flickr.photos.getRecent&api_key='+Constants.API_KEY+'&per_page='+perPage+'&format=json&nojsoncallback=1&page='+page;
+    const [err, data ] = await awaitTo(axios.get(url));
+    if(err) return [];
+    return data.data.photos.photo;
+}
+
+
+async function searchPhotos(query:string,page:number=1,perPage:number=10) {
+    const url =  Constants.BASE_URL+'flickr.photos.search&api_key='+Constants.API_KEY+'&per_page='+perPage+'&format=json&nojsoncallback=1&tags='+query+'&page='+page;
     const [err, data ] = await awaitTo(axios.get(url));
     if(err) return [];
     return data.data.photos.photo;
@@ -18,5 +26,6 @@ function getImageUrl(photo:IPhoto){
 
 export {
     getImageUrl,
-    getRecentPhotos
+    getRecentPhotos,
+    searchPhotos
 }

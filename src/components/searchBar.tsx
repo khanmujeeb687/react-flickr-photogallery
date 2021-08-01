@@ -29,17 +29,17 @@ const SearchBar = () => {
     const handleOnSearch = (item:string, results:any) => {
         // onSearch will have as the first callback parameter
         // the string searched and for the second the results.
-        console.log(item, results)
+        console.log({item, results})
     }
 
     const handleOnHover = (result:any) => {
         // the item hovered
-        console.log(result)
+        console.log({result})
     }
 
     const handleOnSelect = (item:any) => {
         // the item selected
-        console.log(item)
+        console.log({item})
     }
 
     const handleOnFocus = () => {
@@ -47,6 +47,7 @@ const SearchBar = () => {
     }
 
     const formatResult = (item:any) => {
+        console.log('format results');
         return item;
         // return (<p dangerouslySetInnerHTML={{__html: '<strong>'+item+'</strong>'}}></p>); //To format result as html
     }
