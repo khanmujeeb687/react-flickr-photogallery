@@ -36,7 +36,12 @@
     margin-left: 10px !important ;
   }
 }
-
 .search-bar-container {
-  width: 400px;
+  height: 44px !important;
+}
+
+.search-bar {
+  width: 500px;
+  border-radius: 10px;
+  background: white;
 }

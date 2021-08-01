@@ -23,9 +23,26 @@ function getImageUrl(photo:IPhoto){
     return 'https://live.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg';
 }
 
+function getLocalSearchHistory():string[] {
+    const data = localStorage.getItem('search_history');
+    if(!data) return [];
+    return JSON.parse(data).data;
+}
+
+function setLocalSearchHistory(item:string) {
+    return localStorage.setItem('search_history',JSON.stringify({data:[...getLocalSearchHistory(),item]}));
+}
+
+function clearLocalSearch() {
+    return localStorage.removeItem('search_history');
+}
+
 
 export {
     getImageUrl,
     getRecentPhotos,
-    searchPhotos
+    searchPhotos,
+    setLocalSearchHistory,
+    getLocalSearchHistory,
+    clearLocalSearch
 }

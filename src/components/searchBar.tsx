@@ -1,65 +1,58 @@
-import React from 'react';
-// @ts-ignore
-import {ReactSearchAutocomplete} from 'react-search-autocomplete';
+import React, {useRef, useState} from 'react';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import {Button, TextField, Typography} from "@material-ui/core";
+import './home/homeScreen.scss';
+import {clearLocalSearch, getLocalSearchHistory, setLocalSearchHistory} from "../services/photoService";
+import {useDispatch, useSelector} from "react-redux";
+import {IState} from "../store";
+import {Actions} from "../store/actions";
 
 const SearchBar = () => {
-    const items = [
-        {
-            id: 0,
-            name: 'Cobol'
-        },
-        {
-            id: 1,
-            name: 'JavaScript'
-        },
-        {
-            id: 2,
-            name: 'Basic'
-        },
-        {
-            id: 3,
-            name: 'PHP'
-        },
-        {
-            id: 4,
-            name: 'Java'
+    const searchHistory = useSelector((state: IState)=>state.searchHistory);
+    const [term, setTerm] = useState('');
+    const dispatch = useDispatch();
+
+
+    return (<Autocomplete
+        value={term==='clear-textfield'?'':term}
+        blurOnSelect
+        id="combo-box-demo"
+        className='search-bar'
+        options={[...searchHistory,'clear-textfield']}
+        getOptionLabel={(option) => option}
+        renderOption={(option,state)=>{
+            if(option === 'clear-textfield'){
+                if(searchHistory.length===0) return <h3></h3>;
+                return (
+                  <div style={{display:'flex',flexDirection:'row',justifyContent: 'flex-end',flex:1}}>
+                      <Button variant="contained" color="secondary" onClick={()=>{
+                          dispatch(Actions.updateSearchHistory([]));
+                          clearLocalSearch();
+                          setTerm('');
+                      }}>clear</Button>
+                  </div>
+                );
+            }
+            return <Typography>{option}</Typography>
         }
-    ]
-
-    const handleOnSearch = (item:string, results:any) => {
-        // onSearch will have as the first callback parameter
-        // the string searched and for the second the results.
-        console.log({item, results})
-    }
-
-    const handleOnHover = (result:any) => {
-        // the item hovered
-        console.log({result})
-    }
-
-    const handleOnSelect = (item:any) => {
-        // the item selected
-        console.log({item})
-    }
-
-    const handleOnFocus = () => {
-        console.log('Focused')
-    }
-
-    const formatResult = (item:any) => {
-        console.log('format results');
-        return item;
-        // return (<p dangerouslySetInnerHTML={{__html: '<strong>'+item+'</strong>'}}></p>); //To format result as html
-    }
-
-    return (<ReactSearchAutocomplete
-        items={items}
-        onSearch={handleOnSearch}
-        onHover={handleOnHover}
-        onSelect={handleOnSelect}
-        onFocus={handleOnFocus}
-        autoFocus
-        formatResult={formatResult}
+        }
+        renderInput={(params) => (
+            <TextField
+                value={term==='clear-textfield'?'':term}
+                onBlur={()=>{
+                    if(term && !searchHistory.includes(term)){
+                        setLocalSearchHistory(term);
+                        dispatch(Actions.updateSearchHistory([...searchHistory,term]));
+                    }
+                }}
+                onChange={({target: {value}}) => {
+                   setTerm(value);
+                }
+                }
+                {...params}
+                placeholder='search...'
+                variant='outlined'
+            />)}
     />);
 }
 
