@@ -7,5 +7,6 @@ export interface IPhoto {
     title:string,
     ispublic:number,
     isfriend:number,
-    isfamily:number
+    isfamily:number,
+    query?:string
 }
