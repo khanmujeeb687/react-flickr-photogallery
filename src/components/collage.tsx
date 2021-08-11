@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import InfiniteScroll from "react-infinite-scroll-component";
 import GridItem from "./gridItem";
-import './home/homeScreen.scss';
+import './home/homeScreen.css';
 import {getImageUrl, getRecentPhotos, searchPhotos} from "../services/photoService";
 import {useDispatch, useSelector} from "react-redux";
 import {Actions} from "../store/actions";

@@ -3,7 +3,7 @@ import './App.css';
 import HomeScreen from "./components/home/homeScreen";
 import {AppBar, Toolbar, Typography} from '@material-ui/core';
 import SearchBar from "./components/searchBar";
-import './components/home/homeScreen.scss';
+import './components/home/homeScreen.css';
 import SuggestionsBar from "./components/suggestionsBar";
 import {Actions} from "./store/actions";
 import {useDispatch} from "react-redux";

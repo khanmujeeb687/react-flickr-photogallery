@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {IState} from "../store";
 import {getLocalSearchHistory, removeFromLocalHistory} from "../services/photoService";
 import {Actions} from "../store/actions";
-import './home/homeScreen.scss';
+import './home/homeScreen.css';
 
 
 const SuggestionsBar = () => {

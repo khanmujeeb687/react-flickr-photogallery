@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27bee8b7-7750-42f9-ab75-fb273831ff69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/collage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collage.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="27bee8b7-7750-42f9-ab75-fb273831ff69" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,10 +113,10 @@
       <screen x="0" y="25" width="1440" height="800" />
     </state>
     <state x="504" y="140" key="RollbackChangesDialog/0.25.1440.800@0.25.1440.800" timestamp="1627799354156" />
-    <state x="384" y="182" width="671" height="486" key="find.popup" timestamp="1627703871345">
+    <state x="384" y="182" width="671" height="486" key="find.popup" timestamp="1628700006479">
       <screen x="0" y="25" width="1440" height="800" />
     </state>
-    <state x="384" y="182" width="671" height="486" key="find.popup/0.25.1440.800@0.25.1440.800" timestamp="1627703871345" />
+    <state x="384" y="182" width="671" height="486" key="find.popup/0.25.1440.800@0.25.1440.800" timestamp="1628700006479" />
     <state x="385" y="149" width="670" height="676" key="search.everywhere.popup" timestamp="1627819188644">
       <screen x="0" y="25" width="1440" height="800" />
     </state>

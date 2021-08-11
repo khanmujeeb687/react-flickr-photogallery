@@ -1,5 +1,5 @@
 import React from 'react';
-import './home/homeScreen.scss'
+import './home/homeScreen.css'
 
 export interface IGridItem {
     url:string,

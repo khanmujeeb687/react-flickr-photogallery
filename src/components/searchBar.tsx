@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {TextField} from "@material-ui/core";
-import './home/homeScreen.scss';
+import './home/homeScreen.css';
 import {useDispatch, useSelector} from "react-redux";
 import {Actions} from "../store/actions";
 import {IState} from "../store";
